@@ -1,4 +1,4 @@
-// Promise使用的具体实例
+// Promise使用的具体实例1
 // 想要某个函数拥有promise功能，只需让其返回一个promise即可。
 //做饭
 function cook(){

@@ -1,7 +1,6 @@
 // Promise使用的具体实例
 // 想要某个函数拥有promise功能，只需让其返回一个promise即可。
 //做饭
-//1
 function cook(){
     console.log('开始做饭。');
     // 此时还未定义做饭成功或失败的回调函数，后续在then中定义

@@ -1,4 +1,4 @@
-// Promise.all()使用
+// 03、Promise.all()使用
 // Promise.all()方法接收一个promise的iterable类型输入，只返回一个Promise实例，输入的所有promise的resolve回调的结果是一个数组。
 
 // Promise.resolve（）相当于调用Promise执行resolve中的参数，等同于向形参data传值

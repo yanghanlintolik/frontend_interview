@@ -1,4 +1,4 @@
-// Promise创建
+// 01、Promise创建
 // 以new Promise构造函数创建Promise
 // Promise接受一个处理器函数作为参数，此处理器函数中处理的是异步操作
 const myFirstPromise = new Promise(function(resolve,reject){

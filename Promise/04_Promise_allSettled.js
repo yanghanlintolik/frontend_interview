@@ -1,3 +1,4 @@
+// 03、Promise.allSettled()
 // Promise.allSettled()返回一个所有给定promise都已settled的promise，并带有一个对象数组，每个对象表示对应的promise状态结果
 // 如果一个 promise 已经被兑现(fulfilled)或被拒绝(rejected),那么我们也可以说它处于已敲定（settled）状态
 

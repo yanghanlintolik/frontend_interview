@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>如何使元素居中？水平和垂直居中是一个道理，方法相同。</h1>
+
+    <h2>1、父元素设置text-align:center</h2>
+    <div class="box" style = "text-align: center;">
+        <div class = "item" style = "display: inline-block;">
+            文字、行内元素和行内块元素自动水平居中，但块级元素block不行
+        </div>
+    </div>
+
+    <h2>2、元素设置margin:0 auto</h2>
+    <div class="box" >
+        <div class = "item" style="margin:0 auto">
+            需提前知道容器宽度，然后配合margin左右的值为auto
+        </div>
+    </div>
+
+    <h2>3、相对定位relative + margin-left左偏移</h2>
+    <div class="box" >
+        <div class = "item" style="position: relative; left: 50%; margin-left: -150px;">
+            需提前知道容器宽度，position:relative; left:50%; margin-left:-0.5*width;
+        </div>
+    </div>
+
+    <h2>4、flex布局 + justify-content </h2>
+    <div class="box" style="display: flex; justify-content: center;">
+        <div class = "item" >
+            父元素选择flex布局，且设置主轴对齐方式justify-content为center
+        </div>
+    </div>
+
+    <h2>5、flex布局 + margin </h2>
+    <div class="box" style="display: flex;">
+        <div class = "item" style = "margin: 0 auto;" >
+            父元素选择flex布局，且设置子元素为flex+margin
+        </div>
+    </div>
+
+    <h2>6、子绝父相 + margin </h2>
+    <div class="box" style="position: relative">
+        <div class = "item" style = "position: absolute; left:50%; transform: translateX(-50%)">
+            transform等是相对于元素本身进行移动，因此无需提前知道元素宽度
+        </div>
+    </div>
+
+
+</body>
+
+<style>
+    .box {
+        height: 100px;
+        width: auto;
+        background-color: antiquewhite;
+    }
+    .item {
+        height: 100px;
+        width: 300px;
+        background-color: pink;
+    }
+</style>
+</html>

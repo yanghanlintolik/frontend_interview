@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box" style="justify-content:space-around;">
+        <div class="item">space-around平分剩余空间</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+    </div>
+
+<hr/>
+
+    <div class="box" style="justify-content:space-between;">
+        <div class="item">space-between先对其两边，再平分</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+    </div>
+
+<hr/>
+
+    <div class="box" style="justify-content:space-between; align-items: flex-end; height: 200px;">
+        <div class="item">单行用align-items控制竖列</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item3</div>
+    </div>
+
+<hr/>    
+
+    <div class="box" style="justify-content:space-between; align-content: space-between; height: 400px; flex-wrap: wrap">
+        <div class="item2">多行用align-content控制竖列</div>
+        <div class="item2">默认stretch平分侧轴</div>
+        <div class="item2">item3</div>
+        <div class="item2">item4</div>
+        <div class="item2">item5</div>
+        <div class="item2">item6</div>
+        <div class="item2">item7</div>
+        <div class="item2">item8</div>
+    </div>
+
+</body>
+
+<style>
+    .box {
+        background-color: bisque;
+        display:flex;
+        flex-direction:row;
+    }
+    .item {
+        background-color: pink;
+        width:100px;
+        height:100px;
+    }
+    .item2 {
+        background-color: pink;
+        width:400px;
+        height:100px;
+    }
+</style>
+</html>

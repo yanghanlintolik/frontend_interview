@@ -10,4 +10,11 @@
 ### 1.8 promise.race()
 ### 1.9 promise.resolve()
 ### 1.10 promise.then()
+## 2、布局
+### 2.1 flex弹性布局
+### 2.2 三角形实现
+### 2.3 元素居中
+## 3、this指向
+### 3.1 thiis指向
+### 3.2 改变this指向
 

@@ -1,0 +1,67 @@
+<!-- Js 中this 的指向，是当调用函数的时候确定的。调用方式的不同决定了this 的指向不同。 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>请查看控制台输出</h1>
+    <button id="btn1">绑定事件函数的this指向事件调用者</button>
+    <button id="btn2" onclick="timeoutID();">asetTime函数的this指向window</button>
+<script>
+    // 1.普通函数this指向window
+    function fn() {
+    console.log('普通函数this:'+this)}
+    window.fn(); // 在html中使用
+
+    // 2.对象的方法this指向对象
+    var o = {
+    sayHi: function() {
+        console.log('对象的方法this:'+this)
+    }
+    }
+    o.sayHi();
+
+    // 3.构造函数this指向实例对象，原型对象this也指向实例对象
+    function Star() {
+        console.log('构造函数方法的this:'+this)
+    }
+    Star.prototype.sing = function(){
+        console.log('原型对象的this:'+this)
+    }
+    var ldh = new Star()
+    ldh.sing()
+
+    // 4.绑定事件函数 this指向的是函数的调用者
+    var btn = document.getElementById('btn1');
+        btn.onclick = function(){
+        console.log('绑定事件函数的this：'+this)
+    }
+
+    // 5.定时器函数this指向window
+    var btn2 = document.getElementById('btn2');
+    function timeoutID(){
+        window.setTimeout(function() {
+            console.log('定时器this：',this)
+        },1000)
+    }
+
+    // 6. 立即执行函数this指向window
+    (function() {
+        console.log('立即执行函数this：',this)
+    })();
+
+    // 7.箭头函数体内的this对象，就是定义该函数时所在的作用域指向的对象，而不是使用时所在的作用域指向的对象。
+    var A = {
+       sayHello: () => {
+          console.log('箭头函数内部this：',this)
+       }
+    }
+    A.sayHello();
+
+</script>
+</body>
+</html>

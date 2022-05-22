@@ -15,7 +15,9 @@ for(let i=1 ; i<dp[0].length ;i++){
 for(let i=1 ; i<a.length ; i++){
     for(let j=1 ; j<=m ; j++){
         // 5、递推
+        // 如果j<a[i]，肯定不能放入i物品
         if(j<a[i]) dp[i][j] = dp[i-1][j]
+        // 否则比较放入i物品和不放i物品以产生最大值
         else dp[i][j] = Math.max(dp[i-1][j],dp[i-1][j-a[i]]+v[i])
     }
 }

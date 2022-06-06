@@ -13,6 +13,6 @@ Person.prototype.getName = function () {
 // Person.prototype和xiaoming的[[Prototype]]都指向同一个对象，这个对象对于Person构造函数而言叫做原型对象，对于xiaoming实例而言叫做原型
 const xiaoming = new Person()
 
-console.log('xiaoming: ', xiaoming)
-console.log('getName: ',xiaoming.getName())
-
+console.log('xiaoming: ', xiaoming) // Person {}
+console.log('getName: ',xiaoming.getName()) // 小明
+console.log('xiaoming.tostring', xiaoming.toString()) // [object Object]

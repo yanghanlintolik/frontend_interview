@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style type="text/css">
+        div, p, a {
+            padding: 15px 30px;
+            display: block;
+            border: 2px solid #000;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">DIV
+        <p class="hint">P
+            <a href="#">A</a>
+        </p>
+    </div>
+    <script>
+        function showTagName() {
+            alert("事件捕获: " + this.tagName);
+        }
+        var elems = document.querySelectorAll("div, p, a");
+        for (let elem of elems) {
+            // 根据第三个参数决定是冒泡处理还是捕获处理，默认是false冒泡处理
+            elem.addEventListener("click", showTagName, false);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- 正则表达式匹配应用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h1>验证邮箱</h1>
+    <input type='text' id="email" value="邮箱">
+    <input type="button" value="验证" onclick="testemail()">
+    <h1>验证手机号</h1>
+    <input type='text' id="phone" value="电话">
+    <input type="button" value="验证" onclick="testphone()">
+    </div>
+
+<script>
+function testemail(){
+    var value = document.getElementById('email').value;
+    var reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+    if(reg.test(value)){
+        alert('邮箱格式正确！')
+    }else{
+        alert('邮箱格式不正确！')
+    }
+}
+function testphone(){
+    var value = document.getElementById('phone').value;
+    var reg = /^(?:(?:\+|00)86)?1[3-9]\d{9}$/
+    if(reg.test(value)){
+        alert('号码格式正确！')
+    }else{
+        alert('号码格式不正确！')
+    }
+}
+</script>
+</body>
+</html>

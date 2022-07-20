@@ -1,0 +1,43 @@
+<!-- 手写Debonuce -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">防抖</button>
+
+<script>
+    // debounce是一个函数，并且需要传入一个函数handle
+    // 传入函数后，我们要传入一个防抖时间wait
+    // 需要判断是否立即执行immediate
+    // 返回一个一个函数 fn
+    function clickHandle(){
+        console.log('被点击')
+    }
+    function debounce(handle,wait,immediate){
+        // 首先对参数进行判断
+        if(typeof handle !== 'function') throw new Error('handle must be a function!')
+        // timer是一个定时器
+        let timer = null
+        // 返回一个闭包函数，用闭包确定timer不会被销毁
+        return function() {
+            // 保存事件参数，防止fn函数需要事件参数里的数据
+            let arg = arguments;
+            // 调用一次就清除上一次的定时器
+            clearTimeout(timer);
+            // 开启这一次定时器
+            timer = setTimeout(() =>{
+                // handle被执行
+                // 若不改变this指向，则会指向fn定义环境
+                handle.apply(this, arg);
+            },wait)
+        }
+    }
+    document.getElementById('btn1').addEventListener('click',debounce(clickHandle,1000,true))
+</script>
+</body>
+</html>

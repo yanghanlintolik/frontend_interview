@@ -1,0 +1,39 @@
+<!-- 手写节流 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">节流</button>
+
+<script>
+    function handle(){
+        console.log('被点击');
+    }
+    function throttle(handle,wait){
+        // 记录上一次调用时间
+        var prev = null;
+        console.log(prev);
+        // 返回闭包函数
+        return function(){
+            // 保存事件参数
+            var args = arguments;
+            // 记录现在调用时间
+            var now = Date.now();
+            // 如果间隔大于设置的节流时间，则可以执行
+            if(now - prev >= wait){
+                // 执行函数
+                handle.apply(this,args);
+                // 将现在的时间设置为上一次执行时间
+                prev = now;
+            }
+        }
+    }
+    document.getElementById('btn1').addEventListener('click',throttle(handle,1000))
+</script>
+</body>
+</html>

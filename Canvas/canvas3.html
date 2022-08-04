@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas1 {
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="400">111111</canvas>
+</body>
+
+<script type="text/javascript">
+    // 获取canvas元素的dom对象
+    const canvas = document.getElementById('canvas1');
+    // 获取画布的上下文对象
+    context = canvas.getContext('2d');
+    // 设置绘点
+    context.moveTo(20,20);
+    context.lineTo(220,20);
+    context.lineTo(220,120);
+    context.lineTo(20,120);
+    // context.lineTo(20,20);
+    // 自动闭合
+    context.closePath();
+    // 绘制线条（通过描边形式绘制线条）
+    context.stroke();
+
+</script>    
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas1 {
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="400">111111</canvas>
+</body>
+
+<script type="text/javascript">
+    // 获取canvas元素的dom对象的上下文context
+    const context = document.getElementById('canvas1').getContext('2d');
+    // 旋转
+    context.rotate(30 * Math.PI/180);
+    // 设置填充色
+    context.fillStyle = 'orange';
+    context.fillRect(200,150,200,100);
+
+
+</script>    
+</html>

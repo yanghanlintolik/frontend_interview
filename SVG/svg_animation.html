@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<svg>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #r1 {
+            animation: move 1s ease 1s infinite alternate;
+        }
+        @keyframes move{
+            100%{
+                transform:scale(1.5);
+                x:30;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg style="background:orange" width="500px" height="500px" viewBox="0 0 100 100">
+  
+        <!-- 矩形 -->
+        <rect id="r1" x="50" y="50" width="20" height="10" />
+
+    </svg>
+</body>
+</html>

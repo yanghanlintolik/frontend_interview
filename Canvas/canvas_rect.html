@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas1 {
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="400">111111</canvas>
+</body>
+
+<script type="text/javascript">
+    // 获取canvas元素的dom对象的上下文context
+    const context = document.getElementById('canvas1').getContext('2d');
+    // 设置矩形绘点 x,y为矩形左上角坐标 width矩形宽度 height矩形高度
+    // context.rect(x,y,width,height);
+    context.rect(10,10,200,100);
+    // 绘制线条（通过描边形式绘制线条）
+    // context.stroke();
+    // 设置填充色
+    context.fillStyle = 'orange';
+    // 绘制实心图形
+    context.fill();
+
+</script>    
+</html>

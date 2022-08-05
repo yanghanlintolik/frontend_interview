@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas1 {
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="400">111111</canvas>
+</body>
+
+<script type="text/javascript">
+    // 获取canvas元素的dom对象的上下文context
+    const context = document.getElementById('canvas1').getContext('2d');
+    
+    // 绘制网格
+    // 坐标系尺寸
+    const width = 600;
+    const height = 400;
+    // 网格尺寸
+    const gridWidth = 20;
+    const gridHeight = 20;
+    // 绘制水平线
+    for(let i=0;i<height/gridHeight;i++){
+        // 开启独立绘制环境
+        context.beginPath();
+        // 设置水品线起点坐标
+        context.moveTo(0,i * gridHeight);
+        // 设置水平线终点坐标
+        context.lineTo(width,i * gridHeight);
+        // 设置颜色
+        context.strokeStyle='#eee';
+        // 开始绘制
+        context.stroke();
+    }
+    // 绘制垂直线
+    for(let i=0;i<width/gridWidth;i++){
+        // 开启独立绘制环境
+        context.beginPath();
+        // 设置水品线起点坐标
+        context.moveTo(i * gridWidth,0);
+        // 设置水平线终点坐标
+        context.lineTo(i * gridWidth, height);
+        // 设置颜色
+        context.strokeStyle='#eee';
+        // 开始绘制
+        context.stroke();
+    }
+    // 绘制直角坐标系
+    // 开启独立绘制环境
+    context.beginPath();
+    context.moveTo(20,20);
+    context.lineTo(20,380);
+    context.lineTo(580,380);
+    context.strokeStyle = '#000';
+    context.stroke();
+    // 绘制x箭头
+    context.beginPath();
+    context.moveTo(570,375);
+    context.lineTo(580,380);
+    context.lineTo(570,385);
+    context.fill();
+    // 绘制y箭头
+    context.beginPath();
+    context.moveTo(15,30);
+    context.lineTo(20,20);
+    context.lineTo(25,30);
+    context.fill();
+    // 绘制折线
+    context.beginPath();
+    context.strokeStyle = 'red';
+    context.lineWidth = 3;
+    context.moveTo(20,380);
+    context.lineTo(120,100);
+    context.lineTo(220,80);
+    context.lineTo(320,180);
+    context.lineTo(420,280);
+    context.lineTo(420,120);
+    context.stroke();
+    // 绘制折线
+    context.beginPath();
+    context.strokeStyle = 'green';
+    context.lineWidth = 3;
+    context.moveTo(20,180);
+    context.lineTo(120,120);
+    context.lineTo(220,280);
+    context.lineTo(320,90);
+    context.lineTo(420,190);
+    context.lineTo(520,220);
+    context.stroke();
+
+</script>    
+</html>
